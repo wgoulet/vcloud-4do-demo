@@ -1,0 +1,8 @@
+# Build the container
+docker build -t some-content-nginx . 
+
+# Run the container, note the hostname to embed in the certificate
+# is an argument to docker run that will be passed as an argument to the 
+# run.sh script that is executed when the container is started
+docker run --name some-nginx -d -p 9090:443 some-content-nginx d1.venafi.localhost
+
